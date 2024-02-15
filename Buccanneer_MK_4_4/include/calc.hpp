@@ -8,4 +8,6 @@ double returnVolts(int eightBit);
 
 double toRad(float angle);
 
+int returnEightBit(int pct);
+
 #endif

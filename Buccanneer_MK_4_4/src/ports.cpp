@@ -6,6 +6,8 @@ const char FRONT_RIGHT_WING_PORT = 'F';
 const char BACK_LEFT_WING_PORT = 'G';
 const char BACK_RIGHT_WING_PORT = 'H';
 
+//AUTOFIRE SPEED
+const int AUTOFIRE_SPEED = 100;
 //ROTATION SENSOR PORT
 const int CATAPULT_ROTATION_PORT = 30;
 

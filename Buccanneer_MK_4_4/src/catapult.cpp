@@ -53,18 +53,21 @@ void catapultStart()
     catapultMode = "loading";
     cataStart = 1;
     }
+    smallCatapult.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    bigCatapult.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
 }
 
 void catapultFXN(){
     if(cataStart == 0){
-    
+    /*
     if(isAtPosition){
     catapultMode = "resetting";
     }else{
+      }*/
     catapultMode = "loading";
     cataStart = 1;
-    }} else if (cataStart == 1){
+    } else if (cataStart == 1){
     if ((catapultMode == "resetting")  && (!isAtPosition) && (cataClock.getTime() > FIRING_PERIOD)) {
     catapultMode = "loading";
     } else if (master.get_digital(pros::E_CONTROLLER_DIGITAL_R1) && (autoLock == 0)){
@@ -181,14 +184,19 @@ void catapultFXN(){
 
     if(catapultMode == "resetting"){
     bigCatapult = 90;
+    smallCatapult = 90;
     } else if (catapultMode == "loading" || catapultMode == "blocking" || catapultMode == "waiting"){
-    bigCatapult = 0;
+    bigCatapult.brake();
+    smallCatapult.brake();
     } else if (catapultMode == "lowering"){
     bigCatapult = 89;
+    smallCatapult = 89;
     } else if (catapultMode == "setfire"  || catapultMode == "distancefire"){
     bigCatapult = 127;
+    smallCatapult = 127;
     } else if (catapultMode == "autofire"){
-    bigCatapult = 114;
+    bigCatapult = returnEightBit(AUTOFIRE_SPEED);
+    smallCatapult = returnEightBit(AUTOFIRE_SPEED);
     } 
 
     cataClock.delay();

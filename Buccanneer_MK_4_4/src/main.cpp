@@ -121,8 +121,8 @@ void opcontrol() {
 	{
 		catapultFXN();
 		displayFXN();
-		//driveFXN();
-		lemlibDrive();
+		driveFXN();
+		//lemlibDrive();
 		hangFXN();
 		intakeFXN();
 		wingsFXN();

@@ -49,6 +49,7 @@
    extern const int DETECTION_RANGE;
    extern const bool NORMAL_ROTATION;
    extern const int PRIME_POSITION;
+   extern const int AUTOFIRE_SPEED;
 
    extern pros::Motor intake;
    extern const int INTAKE_PORT;
