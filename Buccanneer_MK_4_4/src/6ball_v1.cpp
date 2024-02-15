@@ -38,20 +38,24 @@ void far6Ball_V1()
 
     //PUSH HANG BALL IN GOAL
     chassis.turnTo(96.5, 0, 300);
-    chassis.turnTo(96.5, 139.4, 600);
+    chassis.turnTo(96.5, 142, 600);
     chassis.waitUntilDone();
 
     intakeOut();
-    chassis.moveToPose(87.5, 139.4, -90, 500);
+
+
+    chassis.moveToPose(87.5, 142, -90, 500);
     chassis.waitUntilDone();
 
+
+    pros::delay(500);
     intakeStop();
 
     //HEAD FOR SAFE BALL (BALL 4)
-    chassis.moveToPose(120, 139.4, -90, 1000, {false});
+    chassis.moveToPose(120, 142, -90, 1000, {false});
     chassis.waitUntilDone();  
 
-    chassis.turnTo(92, 103, 4000);
+    chassis.turnTo(100, 96, 700);
         
     intakeIn();
 
@@ -64,6 +68,8 @@ void far6Ball_V1()
     /*
     chassis.turnTo(92, 103, 4000);
     chassis.waitUntilDone();  
+
+    intakeIn();
     */
 
 
